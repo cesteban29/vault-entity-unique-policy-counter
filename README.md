@@ -79,9 +79,7 @@ You can use the provided Dockerfile to build and run the script in a containeriz
 
 #### Building the Docker Image
 
-1. **Create a Dockerfile** in the same directory as your Python script (`vault_entity_unique_policy_counter.py`).
-
-2. **Build the Docker image** by running the following command in your terminal (navigate to the directory containing the `Dockerfile`):
+1. **Build the Docker image** by running the following command in your terminal (navigate to the directory containing the `Dockerfile`):
 
    ```bash
    docker build -t vault-entity-counter .
@@ -110,6 +108,12 @@ docker run --rm \
   -e CERT_AUTH_MOUNT_ACCESSORS="auth_cert_mount_accessor" \
   -e VAULT_NAMESPACE="optional-namespace" \
   vault-entity-counter
+```
+
+or you can pass the environment variables using a `.env` file after creating one with the environment variables.
+
+```bash
+docker run --rm --env-file .env vault-entity-counter
 ```
 
 ### What the script does:
